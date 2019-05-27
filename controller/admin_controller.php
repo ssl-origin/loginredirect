@@ -9,7 +9,6 @@
 
 namespace david63\loginredirect\controller;
 
-use Symfony\Component\DependencyInjection\ContainerInterface;
 use phpbb\config\config;
 use phpbb\request\request;
 use phpbb\db\driver\driver_interface;
@@ -57,7 +56,7 @@ class admin_controller implements admin_interface
 	* @param \phpbb\template\template			$template	Template object
 	* @param \phpbb\user						$user		User object
 	* @param \phpbb\log\log						$log		Log object
-	* @param phpbb\language\language			$language	Language object
+	* @param \phpbb\language\language			$language	Language object
 	*
 	* @return \david63\loginredirect\controller\admin_controller
 	* @access public
@@ -184,7 +183,7 @@ class admin_controller implements admin_interface
 		{
 			$sql = 'SELECT topic_id
 				FROM ' . TOPICS_TABLE . '
-					WHERE topic_id = ' . (int)$topic_id;
+					WHERE topic_id = ' . (int) $topic_id;
 
 			$result	= $this->db->sql_query($sql);
 			$row	= $this->db->sql_fetchrow($result);

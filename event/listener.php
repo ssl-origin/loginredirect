@@ -54,7 +54,7 @@ class listener implements EventSubscriberInterface
 	* @param \phpbb\db\driver\driver_interface	$db			Database object
 	* @param string 							$root_path	phpBB root path
 	* @param string 							$php_ext	pgpBB file extension
-	* @param phpbb\language\language			$language	Language object
+	* @param \phpbb\language\language			$language	Language object
 	*
 	* @access public
 	*/
@@ -132,7 +132,7 @@ class listener implements EventSubscriberInterface
 			{
 				$sql = 'SELECT topic_id
 					FROM ' . TOPICS_TABLE . '
-						WHERE topic_id = ' . (int)$this->config['redirect_welcome_topic_id'];
+						WHERE topic_id = ' . (int) $this->config['redirect_welcome_topic_id'];
 
 				$result	= $this->db->sql_query($sql);
 				$row	= $this->db->sql_fetchrow($result);
@@ -171,7 +171,7 @@ class listener implements EventSubscriberInterface
 					{
 						$sql = 'SELECT topic_id, topic_time
 							FROM ' . TOPICS_TABLE . '
-								WHERE topic_id = ' . (int)$this->config['redirect_announce_topic_id'];
+								WHERE topic_id = ' . (int) $this->config['redirect_announce_topic_id'];
 
 						$result	= $this->db->sql_query($sql);
 						$row	= $this->db->sql_fetchrow($result);
@@ -221,8 +221,8 @@ class listener implements EventSubscriberInterface
 						// Is user in the selected group?
 						$sql = 'SELECT group_id
 						FROM ' . USER_GROUP_TABLE . '
-							WHERE group_id = ' . (int)$this->config['redirect_group_id'] . '
-								AND user_id = ' . (int)$this->user->data['user_id'];
+							WHERE group_id = ' . (int) $this->config['redirect_group_id'] . '
+								AND user_id = ' . (int) $this->user->data['user_id'];
 
 						$result	= $this->db->sql_query($sql);
 						$row	= $this->db->sql_fetchrow($result);
@@ -240,7 +240,7 @@ class listener implements EventSubscriberInterface
 					{
 						$sql = 'SELECT topic_id, topic_time
 						FROM ' . TOPICS_TABLE . '
-							WHERE topic_id = ' . (int)$this->config['redirect_group_topic_id'];
+							WHERE topic_id = ' . (int) $this->config['redirect_group_topic_id'];
 
 						$result	= $this->db->sql_query($sql);
 						$row	= $this->db->sql_fetchrow($result);
