@@ -16,7 +16,7 @@ use phpbb\template\template;
 use phpbb\user;
 use phpbb\log\log;
 use phpbb\language\language;
-use david63\loginredirect\ext;
+use david63\loginredirect\core\functions;
 
 /**
 * Admin controller
@@ -44,32 +44,42 @@ class admin_controller implements admin_interface
 	/** @var \phpbb\language\language */
 	protected $language;
 
+	/** @var \david63\loginredirect\core\functions */
+	protected $functions;
+
+	/** @var string phpBB tables */
+	protected $tables;
+
 	/** @var string Custom form action */
 	protected $u_action;
 
 	/**
 	* Constructor for admin controller
 	*
-	* @param \phpbb\config\config				$config		Config object
-	* @param \phpbb\request\request				$request	Request object
-	* @param \phpbb\db\driver\driver_interface	$db			Database object
-	* @param \phpbb\template\template			$template	Template object
-	* @param \phpbb\user						$user		User object
-	* @param \phpbb\log\log						$log		Log object
-	* @param \phpbb\language\language			$language	Language object
+	* @param \phpbb\config\config					$config		Config object
+	* @param \phpbb\request\request					$request	Request object
+	* @param \phpbb\db\driver\driver_interface		$db			Database object
+	* @param \phpbb\template\template				$template	Template object
+	* @param \phpbb\user							$user		User object
+	* @param \phpbb\log\log							$log		Log object
+	* @param \phpbb\language\language				$language	Language object
+	* @param \david63\loginredirect\core\functions	functions	Functions for the extension
+	* @param array									$tables		phpBB db tables
 	*
 	* @return \david63\loginredirect\controller\admin_controller
 	* @access public
 	*/
-	public function __construct(config $config, request $request, driver_interface $db, template $template, user $user, log $log, language $language)
+	public function __construct(config $config, request $request, driver_interface $db, template $template, user $user, log $log, language $language, functions $functions, $tables)
 	{
-		$this->config	= $config;
-		$this->request	= $request;
-		$this->db		= $db;
-		$this->template	= $template;
-		$this->user		= $user;
-		$this->log		= $log;
-		$this->language	= $language;
+		$this->config		= $config;
+		$this->request		= $request;
+		$this->db			= $db;
+		$this->template		= $template;
+		$this->user	   		= $user;
+		$this->log			= $log;
+		$this->language		= $language;
+		$this->functions	= $functions;
+		$this->tables		= $tables;
 	}
 
 	/**
@@ -81,11 +91,13 @@ class admin_controller implements admin_interface
 	public function display_options()
 	{
 		// Add the language file
-		$this->language->add_lang('acp_loginredirect', 'david63/loginredirect');
+		$this->language->add_lang('acp_loginredirect', $this->functions->get_ext_namespace());
 
 		// Create a form key for preventing CSRF attacks
 		$form_key = 'login_redirect';
 		add_form_key($form_key);
+
+		$back = false;
 
 		// Is the form being submitted
 		if ($this->request->is_set_post('submit'))
@@ -118,7 +130,12 @@ class admin_controller implements admin_interface
 			'HEAD_TITLE'		=> $this->language->lang('REDIRECT_LOGIN'),
 			'HEAD_DESCRIPTION'	=> $this->language->lang('REDIRECT_LOGIN_EXPLAIN'),
 
-			'VERSION_NUMBER'	=> ext::LOGIN_REDIRECT_VERSION,
+			'NAMESPACE'			=> $this->functions->get_ext_namespace('twig'),
+
+			'S_BACK'			=> $back,
+			'S_VERSION_CHECK'	=> $this->functions->version_check(),
+
+			'VERSION_NUMBER'	=> $this->functions->get_this_version(),
 		));
 
 		// Set output vars for display in the template
@@ -182,7 +199,7 @@ class admin_controller implements admin_interface
 		if ($topic_id <> '')
 		{
 			$sql = 'SELECT topic_id
-				FROM ' . TOPICS_TABLE . '
+				FROM ' . $this->tables['topics'] . '
 					WHERE topic_id = ' . (int) $topic_id;
 
 			$result	= $this->db->sql_query($sql);

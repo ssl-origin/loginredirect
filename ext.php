@@ -13,8 +13,6 @@ use phpbb\extension\base;
 
 class ext extends base
 {
-	const LOGIN_REDIRECT_VERSION = '2.1.0 RC2';
-
 	/**
 	* Enable extension if phpBB version requirement is met
 	*

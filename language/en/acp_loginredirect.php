@@ -43,6 +43,9 @@ $lang = array_merge($lang, array(
 
 	'LATEST'								=> 'Latest',
 
+	'NEW_VERSION'							=> 'New Version',
+	'NEW_VERSION_EXPLAIN'					=> 'There is a newer version of this extension available.',
+
 	'REDIRECT_ALWAYS'						=> 'Always redirect',
 	'REDIRECT_ALWAYS_EXPLAIN'				=> 'Always redirect the user to the specified topic.',
 	'REDIRECT_ANNOUNCE'						=> 'Announcement redirect on login',
