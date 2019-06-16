@@ -24,5 +24,5 @@ interface main_interface
 	* @return \Symfony\Component\HttpFoundation\Response A Symfony Response object
 	* @access public
 	*/
-	public function loginredirect();
+	public function loginredirect($event);
 }

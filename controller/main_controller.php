@@ -82,7 +82,7 @@ class main_controller implements main_interface
 	* @param string		$name
 	* @return \Symfony\Component\HttpFoundation\Response A Symfony Response object
 	*/
-	public function loginredirect()
+	public function loginredirect($event)
 	{
 		// No point going any further if the user is banned, but we have to allow founders to login
 		if (defined('IN_CHECK_BAN') && $this->user->data['user_type'] != USER_FOUNDER)

@@ -38,8 +38,8 @@ class listener implements EventSubscriberInterface
 	*/
 	public function __construct(functions $functions, main_controller $main_controller)
 	{
-			$this->functions	= $functions;
-		 $this->main_controller = $main_controller;
+		$this->functions		= $functions;
+		$this->main_controller	= $main_controller;
 	}
 
 	/**
@@ -87,6 +87,6 @@ class listener implements EventSubscriberInterface
 	*/
 	public function login_redirect($event)
 	{
-		$this->main_controller->loginredirect();
+		$this->main_controller->loginredirect($event);
 	}
 }
