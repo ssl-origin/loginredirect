@@ -1,6 +1,3 @@
-imports:
-    - { resource: phpbb_tables.yml }
-
 services:
     david63.loginredirect.listener:
         class: david63\loginredirect\event\listener
