@@ -1,5 +1,4 @@
-{% include 'overall_header.html' %}
-{% include '@david63_loginredirect/head_panel.html' %}
+{% include '@' ~ NAMESPACE ~ '/head_panel.html' %}
 
 <form id="login_redirect" method="post" action="{{ U_ACTION }}">
 	<fieldset>
@@ -20,7 +19,7 @@
 		<legend>{{ lang('REDIRECT_ANNOUNCE_OPTIONS') }}</legend>
 
 		<dl>
-			<dt><label for="redirect_announce">{{ lang('REDIRECT_LATEST_ANNOUNCE') }}{{ lang('COLON') }}</label><br /><span>{{ lang('REDIRECT_ANNOUNCE_EXPLAIN') }}</span></dt>
+			<dt><label for="redirect_announce">{{ lang('REDIRECT_LATEST_ANNOUNCE') }}{{ lang('COLON') }}</label><br><span>{{ lang('REDIRECT_ANNOUNCE_EXPLAIN') }}</span></dt>
 			<dd>
 				<input type="radio" id="redirect_announce1" name="redirect_announce" value="1"{% if REDIRECT_ANNOUNCE %} checked="checked"{% endif %} />
 				<label class="set" for="redirect_announce1">{{ lang('YES') }}</label>
@@ -30,7 +29,7 @@
 		</dl>
 
 		<dl>
-  			<dt><label for="redirect_any_announce">{{ lang('REDIRECT_ANNOUNCE') }}{{ lang('COLON') }}</label><br /><span>{{ lang('REDIRECT_ANY_ANNOUNCE_EXPLAIN') }}</span></dt>
+  			<dt><label for="redirect_any_announce">{{ lang('REDIRECT_ANNOUNCE') }}{{ lang('COLON') }}</label><br><span>{{ lang('REDIRECT_ANY_ANNOUNCE_EXPLAIN') }}</span></dt>
 			<dd>
 				<input type="radio" id="redirect_any_announce1" name="redirect_any_announce" value="1"{% if REDIRECT_ANY_ANNOUNCE %} checked="checked"{% endif %} />
 				<label class="set" for="redirect_any_announce1">{{ lang('YES') }}</label>
@@ -40,7 +39,7 @@
 		</dl>
 
 		<dl>
-  			<dt><label for="redirect_global">{{ lang('REDIRECT_GLOBAL') }}{{ lang('COLON') }}</label><br /><span>{{ lang('REDIRECT_GLOBAL_EXPLAIN') }}</span></dt>
+  			<dt><label for="redirect_global">{{ lang('REDIRECT_GLOBAL') }}{{ lang('COLON') }}</label><br><span>{{ lang('REDIRECT_GLOBAL_EXPLAIN') }}</span></dt>
 			<dd>
 				<input type="radio" id="redirect_global1" name="redirect_global" value="1"{% if REDIRECT_GLOBAL %} checked="checked"{% endif %} />
 				<label class="set" for="redirect_global1">{{ lang('YES') }}</label>
@@ -50,14 +49,14 @@
 		</dl>
 
 		<dl>
-			<dt><label for="redirect_announce_topic_id">{{ lang('REDIRECT_ANNOUNCE_TOPIC_ID') }}{{ lang('COLON') }}</label><br /><span>{{ lang('REDIRECT_ANNOUNCE_TOPIC_ID_EXPLAIN') }}</span></dt>
+			<dt><label for="redirect_announce_topic_id">{{ lang('REDIRECT_ANNOUNCE_TOPIC_ID') }}{{ lang('COLON') }}</label><br><span>{{ lang('REDIRECT_ANNOUNCE_TOPIC_ID_EXPLAIN') }}</span></dt>
 			<dd>
 				<input class="textbox" type="text" id="redirect_announce_topic_id" name="redirect_announce_topic_id" size="8" value="{{ REDIRECT_ANNOUNCE_TOPIC_ID }}" />
 			</dd>
 		</dl>
 
 		<dl>
-  			<dt><label for="redirect_announce_priority">{{ lang('REDIRECT_ANNOUNCE_PRIORITY') }}{{ lang('COLON') }}</label><br /><span>{{ lang('REDIRECT_ANNOUNCE_PRIORITY_EXPLAIN') }}</span></dt>
+  			<dt><label for="redirect_announce_priority">{{ lang('REDIRECT_ANNOUNCE_PRIORITY') }}{{ lang('COLON') }}</label><br><span>{{ lang('REDIRECT_ANNOUNCE_PRIORITY_EXPLAIN') }}</span></dt>
  			<dd>
 				<input type="radio" id="redirect_announce_priority1" name="redirect_announce_priority" value="1"{% if REDIRECT_ANNOUNCE_PRIORITY %} checked="checked"{% endif %} />
 				<label class="set" for="redirect_announce_priority1">{{ lang('LATEST') }}</label>
@@ -67,7 +66,7 @@
 		</dl>
 
 		<dl>
-			<dt><label for="redirect_announce_refresh">{{ lang('REDIRECT_SHOW_MESSAGE') }}{{ lang('COLON') }}</label><br /><span>{{ lang('REDIRECT_ANNOUNCE_MESSAGE_EXPLAIN') }}</span></dt>
+			<dt><label for="redirect_announce_refresh">{{ lang('REDIRECT_SHOW_MESSAGE') }}{{ lang('COLON') }}</label><br><span>{{ lang('REDIRECT_ANNOUNCE_MESSAGE_EXPLAIN') }}</span></dt>
 			<dd>
 				<input type="radio" id="redirect_announce_refresh1" name="redirect_announce_refresh" value="1"{% if REDIRECT_ANNOUNCE_REFRESH %} checked="checked"{% endif %} />
 				<label class="set" for="redirect_announce_refresh1">{{ lang('YES') }}</label>
@@ -80,7 +79,7 @@
 	<fieldset>
 		<legend>{{ lang('REDIRECT_WELCOME_OPTIONS') }}</legend>
 		<dl>
-  			<dt><label for="redirect_welcome">{{ lang('REDIRECT_WELCOME') }}{{ lang('COLON') }}</label><br /><span>{{ lang('REDIRECT_WELCOME_EXPLAIN') }}</span></dt>
+  			<dt><label for="redirect_welcome">{{ lang('REDIRECT_WELCOME') }}{{ lang('COLON') }}</label><br><span>{{ lang('REDIRECT_WELCOME_EXPLAIN') }}</span></dt>
 			<dd>
 				<input type="radio" id="redirect_welcome1" name="redirect_welcome" value="1"{% if REDIRECT_WELCOME %} checked="checked"{% endif %} />
 				<label class="set" for="redirect_welcome1">{{ lang('YES') }}</label>
@@ -90,7 +89,7 @@
 		</dl>
 
 		<dl>
-  			<dt><label for="redirect_always">{{ lang('REDIRECT_ALWAYS') }}{{ lang('COLON') }}</label><br /><span>{{ lang('REDIRECT_ALWAYS_EXPLAIN') }}</span></dt>
+  			<dt><label for="redirect_always">{{ lang('REDIRECT_ALWAYS') }}{{ lang('COLON') }}</label><br><span>{{ lang('REDIRECT_ALWAYS_EXPLAIN') }}</span></dt>
 			<dd>
 				<input type="radio" id="redirect_always1" name="redirect_always" value="1"{% if REDIRECT_ALWAYS %} checked="checked"{% endif %} />
 				<label class="set" for="redirect_always1">{{ lang('YES') }}</label>
@@ -100,14 +99,14 @@
 		</dl>
 
 		<dl>
-			<dt><label for="redirect_welcome_topic_id">{{ lang('REDIRECT_WELCOME_TOPIC_ID') }}{{ lang('COLON') }}</label><br /><span>{{ lang('REDIRECT_WELCOME_TOPIC_ID_EXPLAIN') }}</span></dt>
+			<dt><label for="redirect_welcome_topic_id">{{ lang('REDIRECT_WELCOME_TOPIC_ID') }}{{ lang('COLON') }}</label><br><span>{{ lang('REDIRECT_WELCOME_TOPIC_ID_EXPLAIN') }}</span></dt>
 			<dd>
 				<input type="text" class="textbox" id="redirect_welcome_topic_id" name="redirect_welcome_topic_id" size="8" value="{{ REDIRECT_WELCOME_TOPIC_ID }}" />
 			</dd>
 		</dl>
 
 		<dl>
-			<dt><label for="redirect_welcome_refresh">{{ lang('REDIRECT_SHOW_MESSAGE') }}{{ lang('COLON') }}</label><br /><span>{{ lang('REDIRECT_WELCOME_MESSAGE_EXPLAIN') }}</span></dt>
+			<dt><label for="redirect_welcome_refresh">{{ lang('REDIRECT_SHOW_MESSAGE') }}{{ lang('COLON') }}</label><br><span>{{ lang('REDIRECT_WELCOME_MESSAGE_EXPLAIN') }}</span></dt>
 			<dd>
 				<input type="radio" id="redirect_welcome_refresh1" name="redirect_welcome_refresh" value="1"{% if REDIRECT_WELCOME_REFRESH %} checked="checked"{% endif %} />
 				<label class="set" for="redirect_welcome_refresh1">{{ lang('YES') }}</label>
@@ -120,7 +119,7 @@
 	<fieldset>
 		<legend>{{ lang('REDIRECT_GROUP_OPTIONS') }}</legend>
 		<dl>
-			<dt><label for="redirect_group">{{ lang('REDIRECT_GROUP') }}{{ lang('COLON') }}</label><br /><span>{{ lang('REDIRECT_GROUP_EXPLAIN') }}</span></dt>
+			<dt><label for="redirect_group">{{ lang('REDIRECT_GROUP') }}{{ lang('COLON') }}</label><br><span>{{ lang('REDIRECT_GROUP_EXPLAIN') }}</span></dt>
 			<dd>
 				<input type="radio" id="redirect_group1" name="redirect_group" value="1"{% if REDIRECT_GROUP %} checked="checked"{% endif %} />
 				<label class="set" for="redirect_group1">{{ lang('YES') }}</label>
@@ -130,7 +129,7 @@
 		</dl>
 
 		<dl>
-			<dt><label for="redirect_group_all">{{ lang('REDIRECT_GROUP_ALL') }}{{ lang('COLON') }}</label><br /><span>{{ lang('REDIRECT_GROUP_ALL_EXPLAIN') }}</span></dt>
+			<dt><label for="redirect_group_all">{{ lang('REDIRECT_GROUP_ALL') }}{{ lang('COLON') }}</label><br><span>{{ lang('REDIRECT_GROUP_ALL_EXPLAIN') }}</span></dt>
 			<dd>
 				<input type="radio" id="redirect_group_all1" name="redirect_group_all" value="1"{% if REDIRECT_GROUP_ALL %} checked="checked"{% endif %} />
 				<label class="set" for="redirect_group_all1">{{ lang('YES') }}</label>
@@ -147,14 +146,14 @@
 		</dl>
 
 		<dl>
-			<dt><label for="redirect_group_topic_id">{{ lang('REDIRECT_GROUP_TOPIC_ID') }}{{ lang('COLON') }}</label><br /><span>{{ lang('REDIRECT_GROUP_TOPIC_ID_EXPLAIN') }}</span></dt>
+			<dt><label for="redirect_group_topic_id">{{ lang('REDIRECT_GROUP_TOPIC_ID') }}{{ lang('COLON') }}</label><br><span>{{ lang('REDIRECT_GROUP_TOPIC_ID_EXPLAIN') }}</span></dt>
 			<dd>
 				<input type="text" class="textbox" id="redirect_group_topic_id" name="redirect_group_topic_id" size="8" value="{{ REDIRECT_GROUP_TOPIC_ID }}" />
 			</dd>
 		</dl>
 
 		<dl>
-			<dt><label for="redirect_group_refresh">{{ lang('REDIRECT_SHOW_MESSAGE') }}{{ lang('COLON') }}</label><br /><span>{{ lang('REDIRECT_GROUP_MESSAGE_EXPLAIN') }}</span></dt>
+			<dt><label for="redirect_group_refresh">{{ lang('REDIRECT_SHOW_MESSAGE') }}{{ lang('COLON') }}</label><br><span>{{ lang('REDIRECT_GROUP_MESSAGE_EXPLAIN') }}</span></dt>
 			<dd>
 				<input type="radio" id="redirect_group_refresh1" name="redirect_group_refresh" value="1"{% if REDIRECT_GROUP_REFRESH %} checked="checked"{% endif %} />
 				<label class="set" for="redirect_group_refresh1">{{ lang('YES') }}</label>
@@ -174,5 +173,4 @@
 	</fieldset>
 </form>
 
-{% include '@david63_loginredirect/donate.html' %}
-{% include 'overall_footer.html' %}
+{% include '@' ~ NAMESPACE ~ '/donate.html' %}

@@ -85,16 +85,4 @@ $lang = array_merge($lang, array(
 	'REDIRECT_WELCOME_TOPIC_ID_EXPLAIN'		=> 'Enter the ID of the welcome topic that you wish to redirect all new users to.',
 
 	'SELECTED'								=> 'Selected',
-
-	'VERSION'								=> 'Version',
-));
-
-// Donate
-$lang = array_merge($lang, array(
-	'DONATE'					=> 'Donate',
-	'DONATE_EXTENSIONS'			=> 'Donate to my extensions',
-	'DONATE_EXTENSIONS_EXPLAIN'	=> 'This extension, as with all of my extensions, is totally free of charge. If you have benefited from using it then please consider making a donation by clicking the PayPal donation button opposite - I would appreciate it. I promise that there will be no spam nor requests for further donations, although they would always be welcome.',
-
-	'PAYPAL_BUTTON'				=> 'Donate with PayPal button',
-	'PAYPAL_TITLE'				=> 'PayPal - The safer, easier way to pay online!',
 ));
