@@ -87,16 +87,4 @@ $lang = array_merge($lang, array(
 	'REDIRECT_WELCOME_TOPIC_ID_EXPLAIN'		=> 'Permet de saisir l’ID du sujet de bienvenue vers lequel les utilisateurs seront redirigés.',
 
 	'SELECTED'								=> 'Celle spécifiée',
-
-	'VERSION'								=> 'Version',
-));
-
-// Donate
-$lang = array_merge($lang, array(
-	'DONATE'					=> 'Donation',
-	'DONATE_EXTENSIONS'			=> 'Soutenir le développement de mes extensions',
-	'DONATE_EXTENSIONS_EXPLAIN'	=> 'Cette extension, comme toutes mes extensions, est totalement libre d’utilisation et ce sans frais. Si vous estimez qu’elle vous est bénéfique merci de soutenir son développement en effectuant un don via le bouton « Faire un don via PayPal » - J’apprécierai grandement votre geste. Aussi, je m’engage à ne pas divulguer à quiconque votre contact ni à vous envoyer des demandes de soutiens tels que les dons.',
-	
-	'PAYPAL_BUTTON'				=> 'Faire un don via PayPal',
-	'PAYPAL_TITLE'				=> 'PayPal - Le paiement en ligne, simple et sécurisé.',
 ));

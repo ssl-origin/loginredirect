@@ -38,16 +38,19 @@ if (empty($lang) || !is_array($lang))
 // ’ « » “ ” …
 //
 
-$lang = array_merge($lang, [
-	'EXT_ENABLE_ERROR' => 'Cette extension nécessite phpBB 3.3.0 (ou version plus récente) pour fonctionner.',
-]);
 
-/**
-* Translators ignore this.
-*
-* Overwrite core error message keys with a more specific message.
-*/
 $lang = array_merge($lang, array(
-	'EXTENSION_NOT_ENABLEABLE' 		=> isset($lang['EXTENSION_NOT_ENABLEABLE']) ? $lang['EXTENSION_NOT_ENABLEABLE'] . '<br><br><strong>' . $lang['EXT_ENABLE_ERROR'] . '</strong>' : null,
-	'CLI_EXTENSION_ENABLE_FAILURE' 	=> isset($lang['CLI_EXTENSION_ENABLE_FAILURE']) ? $lang['CLI_EXTENSION_ENABLE_FAILURE'] . ' : ' . $lang['EXT_ENABLE_ERROR'] : null,
+	'DONATE'					=> 'Donation',
+	'DONATE_EXTENSIONS'			=> 'Soutenir le développement de mes extensions',
+	'DONATE_EXTENSIONS_EXPLAIN'	=> 'Cette extension, comme toutes mes extensions, est totalement libre d’utilisation et ce sans frais. Si vous estimez qu’elle vous est bénéfique merci de soutenir son développement en effectuant un don via le bouton « Faire un don via PayPal » - J’apprécierai grandement votre geste. Aussi, je m’engage à ne pas divulguer à quiconque votre contact ni à vous envoyer des demandes de soutiens tels que les dons.',
+
+	'NEW_VERSION'				=> 'Nouvelle version - %s',
+	'NEW_VERSION_EXPLAIN'		=> 'Une nouvelle version %1$s de cette extension est disponible au téléchargement.<br>%2$s',
+	'NEW_VERSION_LINK'			=> 'Lien de téléchargement',
+	'NO_VERSION_EXPLAIN'		=> 'Aucune information n’est disponible concernant cette mise à jour.',
+
+	'PAYPAL_BUTTON'				=> 'Faire un don via PayPal',
+	'PAYPAL_TITLE'				=> 'PayPal - Le paiement en ligne, simple et sécurisé !',
+
+	'VERSION'					=> 'Version',
 ));
