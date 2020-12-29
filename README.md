@@ -1,13 +1,17 @@
 # Login Redirect extension for phpBB
 
 Redirects a user to a chosen topic/announcement when they log in.
-
-[![Build Status](https://travis-ci.com/david63/loginredirect.svg?branch=master)](https://travis-ci.com/david63/loginredirect)
+[![Build Status](https://github.com/david63/loginredirect/workflows/Tests/badge.svg)](https://github.com/phpbb-extensions/david63/loginredirect)
 [![License](https://poser.pugx.org/david63/loginredirect/license)](https://packagist.org/packages/david63/loginredirect)
 [![Latest Stable Version](https://poser.pugx.org/david63/loginredirect/v/stable)](https://packagist.org/packages/david63/loginredirect)
 [![Latest Unstable Version](https://poser.pugx.org/david63/loginredirect/v/unstable)](https://packagist.org/packages/david63/loginredirect)
 [![Total Downloads](https://poser.pugx.org/david63/loginredirect/downloads)](https://packagist.org/packages/david63/loginredirect)
+[![codecov](https://codecov.io/gh/david63/loginredirect/branch/master/graph/badge.svg?token=D2500PgRex)](https://codecov.io/gh/david63/loginredirect)
+
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/1e345cbce32b4f42b577fffca97d4a99)](https://www.codacy.com/manual/david63/loginredirect?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=david63/loginredirect&amp;utm_campaign=Badge_Grade)
+
+[![Compatible](https://img.shields.io/badge/compatible-phpBB:3.2.x-blue.svg)](https://shields.io/)
+[![Compatible](https://img.shields.io/badge/compatible-phpBB:3.3.x-blue.svg)](https://shields.io/)
 
 ## Minimum Requirements
 * phpBB 3.3.0

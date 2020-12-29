@@ -228,6 +228,7 @@ class main_controller implements main_interface
 					}
 				}
 			}
+
 		}
 
 		// append/replace SID (may change during the session for AOL users)
@@ -243,5 +244,7 @@ class main_controller implements main_interface
 		{
 			redirect($redirect);
 		}
+
+		return $event;
 	}
 }
