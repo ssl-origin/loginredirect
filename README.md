@@ -1,6 +1,7 @@
 # Login Redirect extension for phpBB
 
 Redirects a user to a chosen topic/announcement when they log in.
+
 [![Build Status](https://github.com/david63/loginredirect/workflows/Tests/badge.svg)](https://github.com/phpbb-extensions/david63/loginredirect)
 [![License](https://poser.pugx.org/david63/loginredirect/license)](https://packagist.org/packages/david63/loginredirect)
 [![Latest Stable Version](https://poser.pugx.org/david63/loginredirect/v/stable)](https://packagist.org/packages/david63/loginredirect)
